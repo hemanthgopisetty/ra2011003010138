@@ -2,7 +2,7 @@ import React from 'react'
 
 const layout = ({children}) => {
   return (
-    <div className='min-h-screen w-full'>
+    <div className='w-full min-h-screen flex items-start justify-center'>
       {children}
     </div>
   )
