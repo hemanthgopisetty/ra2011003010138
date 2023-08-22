@@ -7,7 +7,7 @@ export default async function Home() {
   const data     = await response.json();
   console.log(data);
   return (
-      <div className="flex flex-col h-full w-full items-center justify-center">
+      <div className="flex flex-col h-full w-full items-center justify-center gap-2">
         {data.map((e)=>{
           return(
             <Link href={`${e.trainNumber}`}>

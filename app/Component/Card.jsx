@@ -1,43 +1,52 @@
 const Card = ({e}) => {
   return (
-    <div className="h-[150px] w-[500px] m-4 p-4 flex flex-col rounded-lg shadow bg-white shadow-slate-100 hover:bg-blue-200">
+    <div className="h-[200px] w-[500px] m-1 p-5 flex flex-col rounded-xl  shadow bg-white shadow-black/50 
+    hover:bg-gray-50 justify-between">
 
     <div className="flex gap-2 justify-between">
 
          {/* Train Name  */}
-        <div className="flex gap-1">
-        <p className="text-left text-black text-2xl font-bold">{e.trainName}</p>
-        <p className="text-left text-black text-2xl font-bold">({e.trainNumber})</p>
+        <div className="text-black">
+            <p className=" text-3xl font-bold">{e.trainName} 
+                  <sub className="text-sm font-bold">({e.trainNumber})</sub>
+            </p>
         </div>
 
         {/* depature time */}
-        <div className="flex">
-    <p className="text-black text-lg">Departure </p>
-    <p className="text-black text-lg">: {e.departureTime.Hours}:{e.departureTime.Minutes}:{e.departureTime.Seconds}</p>
-    </div>
+      <div className="flex flex-col text-sm">
+
+        <p className="text-black  font-bold">
+          Departure : {e.departureTime.Hours} : {e.departureTime.Minutes} : {e.departureTime.Seconds}
+          </p>
+
+        <div className="text-black text-xs flex gap-2">
+          <p className="opacity-80">Delayed by</p>
+          <p>{e.delayedBy} (IST) </p>
+        </div>
+    
+       </div>
 
     </div>
     
-    <div className="flex flex-col">
+    <div className="flex justify-between ">
 
-    <div className="flex text-black text-lg">
-
-          <p className="bg-light-blue-300 py-2 px-4 w-32 rounded-lg">
-              Sleeper : {e.seatsAvailable.sleeper}
+      {/* Sleepers */}
+       <div className="text-lg  bg-blue-200 rounded-lg p-2 m-2 w-36">
+          <p className="font-medium">Sleeper</p>
+          <p className="text-sm">
+              Seats : {e.seatsAvailable.sleeper}
+              <sub className="text-xs"> ${e.price.sleeper}</sub>
           </p>
-    <div>
-          <p className="bg-light-green-300 py-2 px-4 w-32 rounded-lg">
-              AC : {e.seatsAvailable.AC}
+       </div>
+
+       <div className="text-lg  bg-green-200 rounded-lg p-2 m-2 w-36">
+          <p className="font-medium">AC</p>
+          <p className="text-sm">
+              Seats : {e.seatsAvailable.sleeper}
+              <sub className="text-xs"> ${e.price.sleeper}</sub>
           </p>
-      </div>
+       </div>
     </div>
-    </div>
-
-    <div className="text-black text-lg flex gap-2">
-      <p className="opacity-80">Delayed by</p>
-      <p>{e.delayedBy}(IST)</p>
-    </div>
-
   </div>  
   )
 }
