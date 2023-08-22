@@ -1,0 +1,15 @@
+import Card from "./Component/Card";
+import { options } from "./authTokens/tokens";
+export default async function Home() {
+  const url = 'http://20.244.56.144:80/train/trains';
+  const response = await fetch(url,options);
+  const data     = await response.json();
+  console.log(data);
+  return (
+      <div className="flex flex-col">
+        {data.map((e)=>{
+          return <Card e={e}/>
+        })}
+      </div>
+  )
+}
