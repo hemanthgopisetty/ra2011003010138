@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Card from "./Component/Card";
 import { options } from "./authTokens/tokens";
 export default async function Home() {
@@ -8,7 +9,11 @@ export default async function Home() {
   return (
       <div className="flex flex-col">
         {data.map((e)=>{
-          return <Card e={e}/>
+          return(
+            <Link href={`${e.trainNumber}`}>
+              <Card e={e}/>
+            </Link>
+          )
         })}
       </div>
   )
