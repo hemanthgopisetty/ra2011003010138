@@ -1,6 +1,6 @@
 const Card = ({e}) => {
   return (
-    <div className="h-[250px]  m-2 p-4 flex flex-col">
+    <div className="h-[150px] w-[500px] m-4 p-4 flex flex-col rounded-lg shadow bg-white shadow-slate-100 hover:bg-blue-200">
 
     <div className="flex gap-2 justify-between">
 
