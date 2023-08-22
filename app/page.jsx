@@ -10,7 +10,7 @@ export default async function Home() {
       <div className="flex flex-col h-full w-full items-center justify-center gap-2">
         {data.map((e)=>{
           return(
-            <Link href={`${e.trainNumber}`}>
+            <Link href={`train`}>
               <Card e={e}/>
             </Link>
           )

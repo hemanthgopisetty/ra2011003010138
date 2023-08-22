@@ -1,4 +1,4 @@
-import Card from "../Component/Card"
+import SingleCard from "../Component/Card";
 import { options } from "../authTokens/tokens";
 const page = async ({params}) => {
   const url = `http://20.244.56.144:80/train/trains/${params.id}`;
@@ -7,7 +7,7 @@ const page = async ({params}) => {
   console.log(data);
   return (
     <div>
-      <Card e={data}/>
+      <SingleCard e={data}/>
     </div>
   )
 }
